@@ -1,0 +1,187 @@
+{
+  "tools": [
+    {
+      "description": "Navigate the selected page to a URL.",
+      "inputSchema": {
+        "additionalProperties": false,
+        "properties": {
+          "timeout": {
+            "type": "integer"
+          },
+          "url": {
+            "type": "string"
+          },
+          "waitUntil": {
+            "enum": [
+              "load",
+              "domcontentloaded",
+              "networkidle"
+            ],
+            "type": "string"
+          }
+        },
+        "required": [
+          "url"
+        ],
+        "type": "object"
+      },
+      "name": "navigate_page"
+    },
+    {
+      "description": "Resize the page window to the requested dimensions.",
+      "inputSchema": {
+        "additionalProperties": false,
+        "properties": {
+          "deviceScaleFactor": {
+            "type": "number"
+          },
+          "height": {
+            "type": "integer"
+          },
+          "width": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "width",
+          "height"
+        ],
+        "type": "object"
+      },
+      "name": "resize_page"
+    },
+    {
+      "description": "Emulate network conditions and extra HTTP headers.",
+      "inputSchema": {
+        "additionalProperties": false,
+        "properties": {
+          "extraHttpHeaders": {
+            "additionalProperties": {
+              "type": "string"
+            },
+            "type": "object"
+          },
+          "networkConditions": {
+            "additionalProperties": false,
+            "properties": {
+              "download": {
+                "type": "number"
+              },
+              "upload": {
+                "type": "number"
+              }
+            },
+            "required": [
+              "download"
+            ],
+            "type": "object"
+          }
+        },
+        "required": [
+          "extraHttpHeaders"
+        ],
+        "type": "object"
+      },
+      "name": "emulate"
+    },
+    {
+      "description": "Evaluate a JavaScript function in the page.",
+      "inputSchema": {
+        "additionalProperties": false,
+        "properties": {
+          "args": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "function": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "function"
+        ],
+        "type": "object"
+      },
+      "name": "evaluate_script"
+    },
+    {
+      "description": "Click the element with the given uid.",
+      "inputSchema": {
+        "additionalProperties": false,
+        "properties": {
+          "dblClick": {
+            "type": "boolean"
+          },
+          "uid": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "uid"
+        ],
+        "type": "object"
+      },
+      "name": "click"
+    },
+    {
+      "description": "Fill a set of form elements.",
+      "inputSchema": {
+        "additionalProperties": false,
+        "properties": {
+          "elements": {
+            "items": {
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "submit": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "elements"
+        ],
+        "type": "object"
+      },
+      "name": "fill_form"
+    },
+    {
+      "description": "List console messages for the selected page or a service worker.",
+      "inputSchema": {
+        "additionalProperties": false,
+        "properties": {
+          "pageSize": {
+            "type": "integer"
+          },
+          "serviceWorkerId": {
+            "type": "string"
+          }
+        },
+        "required": [],
+        "type": "object"
+      },
+      "name": "list_console_messages"
+    },
+    {
+      "description": "Select a page by id.",
+      "inputSchema": {
+        "additionalProperties": false,
+        "properties": {
+          "bringToFront": {
+            "type": "boolean"
+          },
+          "pageId": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "pageId"
+        ],
+        "type": "object"
+      },
+      "name": "select_page"
+    }
+  ]
+}

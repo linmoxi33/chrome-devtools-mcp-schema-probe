@@ -1,0 +1,22 @@
+{
+  "baseline_rejections": [],
+  "calls": 43,
+  "counts": {
+    "accepted": 8,
+    "crash": 0,
+    "rejected": 35,
+    "timeout": 0
+  },
+  "digest": "ae65d665621c66d4ec2ceae9b5d200d9b5b3d504ae1297479f612faef54638b6",
+  "elapsed_seconds": 0.023,
+  "protocol_version": "2025-06-18",
+  "rpc_messages": 91,
+  "server": {
+    "command": "python3 examples/servers/strict_server.py"
+  },
+  "tool": "mcp-schema-probe",
+  "tools": 8,
+  "version": "1.0.0",
+  "violations": [],
+  "violations_by_kind": {}
+}

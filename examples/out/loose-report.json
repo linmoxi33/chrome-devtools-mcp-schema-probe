@@ -1,0 +1,433 @@
+{
+  "baseline_rejections": [],
+  "calls": 78,
+  "counts": {
+    "accepted": 43,
+    "crash": 0,
+    "rejected": 0,
+    "timeout": 0
+  },
+  "digest": "491a549d606e0af0c42bb4efb4c7d88b81901844cb177430762add3fbd40344a",
+  "elapsed_seconds": 0.026,
+  "protocol_version": "2025-06-18",
+  "rpc_messages": 161,
+  "server": {
+    "command": "python3 examples/servers/loose_server.py"
+  },
+  "tool": "mcp-schema-probe",
+  "tools": 8,
+  "version": "1.0.0",
+  "violations": [
+    {
+      "expectation": "required property 'uid' is absent",
+      "kind": "missing_required",
+      "minimal_1": true,
+      "response_excerpt": "click ok",
+      "tool": "click",
+      "witness": {},
+      "witness_violation": "$.uid is required"
+    },
+    {
+      "expectation": "additionalProperties is false",
+      "kind": "unexpected_property",
+      "minimal_1": true,
+      "response_excerpt": "click ok",
+      "tool": "click",
+      "witness": {
+        "__probe_undeclared__": "x",
+        "uid": "probe"
+      },
+      "witness_violation": "$.__probe_undeclared__ is not a declared property"
+    },
+    {
+      "expectation": "'dblClick' is declared boolean, sent string",
+      "kind": "wrong_type",
+      "minimal_1": true,
+      "response_excerpt": "click ok",
+      "tool": "click",
+      "witness": {
+        "dblClick": "true",
+        "uid": "probe"
+      },
+      "witness_violation": "$.dblClick must be boolean, got string"
+    },
+    {
+      "expectation": "'uid' is declared string, sent integer",
+      "kind": "wrong_type",
+      "minimal_1": true,
+      "response_excerpt": "click ok",
+      "tool": "click",
+      "witness": {
+        "uid": 12345
+      },
+      "witness_violation": "$.uid must be string, got integer"
+    },
+    {
+      "expectation": "required property 'extraHttpHeaders' is absent",
+      "kind": "missing_required",
+      "minimal_1": true,
+      "response_excerpt": "emulate ok",
+      "tool": "emulate",
+      "witness": {},
+      "witness_violation": "$.extraHttpHeaders is required"
+    },
+    {
+      "expectation": "additionalProperties is false",
+      "kind": "unexpected_property",
+      "minimal_1": true,
+      "response_excerpt": "emulate ok",
+      "tool": "emulate",
+      "witness": {
+        "__probe_undeclared__": "x",
+        "extraHttpHeaders": {}
+      },
+      "witness_violation": "$.__probe_undeclared__ is not a declared property"
+    },
+    {
+      "expectation": "'extraHttpHeaders' is declared object, sent array",
+      "kind": "wrong_type",
+      "minimal_1": true,
+      "response_excerpt": "emulate ok",
+      "tool": "emulate",
+      "witness": {
+        "extraHttpHeaders": [
+          1,
+          2,
+          3
+        ]
+      },
+      "witness_violation": "$.extraHttpHeaders must be object, got array"
+    },
+    {
+      "expectation": "'networkConditions' is declared object, sent array",
+      "kind": "wrong_type",
+      "minimal_1": true,
+      "response_excerpt": "emulate ok",
+      "tool": "emulate",
+      "witness": {
+        "extraHttpHeaders": {},
+        "networkConditions": [
+          1,
+          2,
+          3
+        ]
+      },
+      "witness_violation": "$.networkConditions must be object, got array"
+    },
+    {
+      "expectation": "required property 'function' is absent",
+      "kind": "missing_required",
+      "minimal_1": true,
+      "response_excerpt": "evaluate_script ok",
+      "tool": "evaluate_script",
+      "witness": {},
+      "witness_violation": "$.function is required"
+    },
+    {
+      "expectation": "additionalProperties is false",
+      "kind": "unexpected_property",
+      "minimal_1": true,
+      "response_excerpt": "evaluate_script ok",
+      "tool": "evaluate_script",
+      "witness": {
+        "__probe_undeclared__": "x",
+        "function": "probe"
+      },
+      "witness_violation": "$.__probe_undeclared__ is not a declared property"
+    },
+    {
+      "expectation": "'args' is declared array, sent object",
+      "kind": "wrong_type",
+      "minimal_1": true,
+      "response_excerpt": "evaluate_script ok",
+      "tool": "evaluate_script",
+      "witness": {
+        "args": {
+          "not": "an-array"
+        },
+        "function": "probe"
+      },
+      "witness_violation": "$.args must be array, got object"
+    },
+    {
+      "expectation": "'function' is declared string, sent integer",
+      "kind": "wrong_type",
+      "minimal_1": true,
+      "response_excerpt": "evaluate_script ok",
+      "tool": "evaluate_script",
+      "witness": {
+        "function": 12345
+      },
+      "witness_violation": "$.function must be string, got integer"
+    },
+    {
+      "expectation": "required property 'elements' is absent",
+      "kind": "missing_required",
+      "minimal_1": true,
+      "response_excerpt": "fill_form ok",
+      "tool": "fill_form",
+      "witness": {},
+      "witness_violation": "$.elements is required"
+    },
+    {
+      "expectation": "additionalProperties is false",
+      "kind": "unexpected_property",
+      "minimal_1": true,
+      "response_excerpt": "fill_form ok",
+      "tool": "fill_form",
+      "witness": {
+        "__probe_undeclared__": "x",
+        "elements": [
+          {}
+        ]
+      },
+      "witness_violation": "$.__probe_undeclared__ is not a declared property"
+    },
+    {
+      "expectation": "'submit' is declared boolean, sent string",
+      "kind": "wrong_type",
+      "minimal_1": true,
+      "response_excerpt": "fill_form ok",
+      "tool": "fill_form",
+      "witness": {
+        "elements": [
+          {}
+        ],
+        "submit": "true"
+      },
+      "witness_violation": "$.submit must be boolean, got string"
+    },
+    {
+      "expectation": "'elements' is declared array, sent object",
+      "kind": "wrong_type",
+      "minimal_1": true,
+      "response_excerpt": "fill_form ok",
+      "tool": "fill_form",
+      "witness": {
+        "elements": {
+          "not": "an-array"
+        }
+      },
+      "witness_violation": "$.elements must be array, got object"
+    },
+    {
+      "expectation": "additionalProperties is false",
+      "kind": "unexpected_property",
+      "minimal_1": true,
+      "response_excerpt": "list_console_messages ok",
+      "tool": "list_console_messages",
+      "witness": {
+        "__probe_undeclared__": "x"
+      },
+      "witness_violation": "$.__probe_undeclared__ is not a declared property"
+    },
+    {
+      "expectation": "'pageSize' is declared integer, sent string",
+      "kind": "wrong_type",
+      "minimal_1": true,
+      "response_excerpt": "list_console_messages ok",
+      "tool": "list_console_messages",
+      "witness": {
+        "pageSize": "7"
+      },
+      "witness_violation": "$.pageSize must be integer, got string"
+    },
+    {
+      "expectation": "'serviceWorkerId' is declared string, sent integer",
+      "kind": "wrong_type",
+      "minimal_1": true,
+      "response_excerpt": "list_console_messages ok",
+      "tool": "list_console_messages",
+      "witness": {
+        "serviceWorkerId": 12345
+      },
+      "witness_violation": "$.serviceWorkerId must be string, got integer"
+    },
+    {
+      "expectation": "'waitUntil' is constrained to enum ['load', 'domcontentloaded', 'networkidle']",
+      "kind": "invalid_enum",
+      "minimal_1": true,
+      "response_excerpt": "navigate_page ok",
+      "tool": "navigate_page",
+      "witness": {
+        "url": "probe",
+        "waitUntil": "__not_in_enum__"
+      },
+      "witness_violation": "$.waitUntil must be one of ['load', 'domcontentloaded', 'networkidle']"
+    },
+    {
+      "expectation": "required property 'url' is absent",
+      "kind": "missing_required",
+      "minimal_1": true,
+      "response_excerpt": "navigate_page ok",
+      "tool": "navigate_page",
+      "witness": {},
+      "witness_violation": "$.url is required"
+    },
+    {
+      "expectation": "additionalProperties is false",
+      "kind": "unexpected_property",
+      "minimal_1": true,
+      "response_excerpt": "navigate_page ok",
+      "tool": "navigate_page",
+      "witness": {
+        "__probe_undeclared__": "x",
+        "url": "probe"
+      },
+      "witness_violation": "$.__probe_undeclared__ is not a declared property"
+    },
+    {
+      "expectation": "'timeout' is declared integer, sent string",
+      "kind": "wrong_type",
+      "minimal_1": true,
+      "response_excerpt": "navigate_page ok",
+      "tool": "navigate_page",
+      "witness": {
+        "timeout": "7",
+        "url": "probe"
+      },
+      "witness_violation": "$.timeout must be integer, got string"
+    },
+    {
+      "expectation": "'waitUntil' is declared string, sent integer",
+      "kind": "wrong_type",
+      "minimal_1": true,
+      "response_excerpt": "navigate_page ok",
+      "tool": "navigate_page",
+      "witness": {
+        "url": "probe",
+        "waitUntil": 12345
+      },
+      "witness_violation": "$.waitUntil must be string, got integer"
+    },
+    {
+      "expectation": "'url' is declared string, sent integer",
+      "kind": "wrong_type",
+      "minimal_1": true,
+      "response_excerpt": "navigate_page ok",
+      "tool": "navigate_page",
+      "witness": {
+        "url": 12345
+      },
+      "witness_violation": "$.url must be string, got integer"
+    },
+    {
+      "expectation": "required property 'width' is absent",
+      "kind": "missing_required",
+      "minimal_1": true,
+      "response_excerpt": "resize_page ok",
+      "tool": "resize_page",
+      "witness": {},
+      "witness_violation": "$.width is required"
+    },
+    {
+      "expectation": "required property 'height' is absent",
+      "kind": "missing_required",
+      "minimal_1": true,
+      "response_excerpt": "resize_page ok",
+      "tool": "resize_page",
+      "witness": {},
+      "witness_violation": "$.width is required"
+    },
+    {
+      "expectation": "additionalProperties is false",
+      "kind": "unexpected_property",
+      "minimal_1": true,
+      "response_excerpt": "resize_page ok",
+      "tool": "resize_page",
+      "witness": {
+        "__probe_undeclared__": "x",
+        "height": 1,
+        "width": 1
+      },
+      "witness_violation": "$.__probe_undeclared__ is not a declared property"
+    },
+    {
+      "expectation": "'deviceScaleFactor' is declared number, sent string",
+      "kind": "wrong_type",
+      "minimal_1": true,
+      "response_excerpt": "resize_page ok",
+      "tool": "resize_page",
+      "witness": {
+        "deviceScaleFactor": "7",
+        "height": 1,
+        "width": 1
+      },
+      "witness_violation": "$.deviceScaleFactor must be number, got string"
+    },
+    {
+      "expectation": "'height' is declared integer, sent string",
+      "kind": "wrong_type",
+      "minimal_1": true,
+      "response_excerpt": "resize_page ok",
+      "tool": "resize_page",
+      "witness": {
+        "height": "7",
+        "width": 1
+      },
+      "witness_violation": "$.height must be integer, got string"
+    },
+    {
+      "expectation": "'width' is declared integer, sent string",
+      "kind": "wrong_type",
+      "minimal_1": true,
+      "response_excerpt": "resize_page ok",
+      "tool": "resize_page",
+      "witness": {
+        "height": 1,
+        "width": "7"
+      },
+      "witness_violation": "$.width must be integer, got string"
+    },
+    {
+      "expectation": "required property 'pageId' is absent",
+      "kind": "missing_required",
+      "minimal_1": true,
+      "response_excerpt": "select_page ok",
+      "tool": "select_page",
+      "witness": {},
+      "witness_violation": "$.pageId is required"
+    },
+    {
+      "expectation": "additionalProperties is false",
+      "kind": "unexpected_property",
+      "minimal_1": true,
+      "response_excerpt": "select_page ok",
+      "tool": "select_page",
+      "witness": {
+        "__probe_undeclared__": "x",
+        "pageId": 1
+      },
+      "witness_violation": "$.__probe_undeclared__ is not a declared property"
+    },
+    {
+      "expectation": "'bringToFront' is declared boolean, sent string",
+      "kind": "wrong_type",
+      "minimal_1": true,
+      "response_excerpt": "select_page ok",
+      "tool": "select_page",
+      "witness": {
+        "bringToFront": "true",
+        "pageId": 1
+      },
+      "witness_violation": "$.bringToFront must be boolean, got string"
+    },
+    {
+      "expectation": "'pageId' is declared integer, sent string",
+      "kind": "wrong_type",
+      "minimal_1": true,
+      "response_excerpt": "select_page ok",
+      "tool": "select_page",
+      "witness": {
+        "pageId": "7"
+      },
+      "witness_violation": "$.pageId must be integer, got string"
+    }
+  ],
+  "violations_by_kind": {
+    "invalid_enum": 1,
+    "missing_required": 8,
+    "unexpected_property": 8,
+    "wrong_type": 18
+  }
+}
